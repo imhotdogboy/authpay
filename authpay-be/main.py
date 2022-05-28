@@ -3,6 +3,7 @@ from typing import List
 from BankNotes import BankNote
 from imgcrop import imgcrop
 from PIL import Image
+from fastapi.middleware.cors import CORSMiddleware
 
 import uvicorn
 import os
@@ -13,6 +14,19 @@ import pickle
 app = FastAPI()
 pickle_in = open("classifier.pkl","rb")
 classifier=pickle.load(pickle_in)
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.route('/helath')
 async def helath_check():

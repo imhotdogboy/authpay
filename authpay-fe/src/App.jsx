@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import FileUpload from './FileUpload/FileUpload';
 
 function App() {
@@ -7,10 +7,14 @@ function App() {
     name: 'myFile.jpg'
   }])
 
+  const removeFile = (filename) => {
+    setFiles(files.filter(file => file.name !== filename))
+  }
+
   return (
     <div className="App">
       <p className="title">Authpay</p>
-      <FileUpload files={files} setFiles={setFiles} />
+      <FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />
     </div>
   );
 }

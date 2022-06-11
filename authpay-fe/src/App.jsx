@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.scss';
+import './App.css';
 import FileUpload from './FileUpload/FileUpload';
 
 function App() {
@@ -12,8 +12,10 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <p className="title">Authpay</p>
+    <div className="box">
+      <h2 className="header">
+        Authpay
+      </h2>
       <FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />
     </div>
   );

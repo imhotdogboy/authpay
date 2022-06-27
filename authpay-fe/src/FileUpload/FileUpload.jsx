@@ -76,4 +76,4 @@ const FileUpload = ({files, setFiles, removeFile}) => {
     );
 }
 
-export default FileUpload
+export default FileUpload;

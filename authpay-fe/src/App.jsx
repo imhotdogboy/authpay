@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+
 import FileUpload from './FileUpload/FileUpload';
+import Login from './Login/Login';
 
 function App() {
   const [files, setFiles] = useState([{
@@ -19,7 +21,8 @@ function App() {
       </h2>
       <BrowserRouter>
         <Routes>
-          <Route path="/upload" element={<FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />}></Route>
+          <Route path="/upload" element={<FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>

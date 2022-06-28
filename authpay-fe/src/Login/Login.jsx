@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 const cookies = new Cookies();
 export const setCookie = (name, value, option) => {
@@ -54,10 +55,12 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <div className="txt_field">
                     <input type="text" className="user_id" value={name} onChange={(e) => setName(e.target.value)} required />
+                    <span></span>
                     <label>username</label>
                 </div>
                 <div className="txt_field">
                     <input type="password" className="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <span></span>
                     <label>password</label>
                 </div>
                 <div className="signup_link">

@@ -4,6 +4,7 @@ import './App.css';
 
 import FileUpload from './FileUpload/FileUpload';
 import Login from './Login/Login';
+import SignUp from './SignUp/SignUp';
 
 function App() {
   const [files, setFiles] = useState([{
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/upload" element={<FileUpload files={files} setFiles={setFiles} removeFile={removeFile} />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>

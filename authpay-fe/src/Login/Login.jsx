@@ -16,6 +16,7 @@ const Login = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    
     function handleClick() {
         navigate("/signup");
     };
